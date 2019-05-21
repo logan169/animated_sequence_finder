@@ -19,15 +19,18 @@ def find_files_from_reg_exp(folder_path, reg_exp):
     Parameters
     ----------
         folder_path (string): Folder path that is gonna be scanned
-        reg_exp (string): Regex expression that should be used to evaluate  matching files
+        reg_exp (string):
+            Regex expression that should be used to evaluate  matching files
 
     Returns
     -------
-        files_list (list): List containing all filenames matching regex expression 	
+        files_list (list):
+            List containing all filenames matching regex expression
 
     Example
     -------
-    >>> find_files_from_reg_exp("./synthetic_data/job", r"\w+(\.{1}\d{4}\.{1})\w+")
+    >>> find_files_from_reg_exp(
+            "./synthetic_data/job",r"\w+(\.{1}\d{4}\.{1})\w+")
     >>>>>> ['c.1009.jpg', 'c.1003.jpg', 't.1003.jpg', 't.1002.jpg']
 
     """
@@ -54,7 +57,7 @@ def get_animated_frames_by_sequence_names_dict(files_list):
 
     Returns
     -------
-        seq_frames_dict (dict): 
+        seq_frames_dict (dict):
             Dictionary storing sequences & sequences_frames values
 
     Example
@@ -92,7 +95,7 @@ def format_animated_frames_by_sequence_names(seq_frames_dict):
 
     Parameters
     ----------
-        seq_frames_dict (dict): 
+        seq_frames_dict (dict):
             Dictionary storing sequences & sequences_frames values
 
     Returns
@@ -111,7 +114,8 @@ def format_animated_frames_by_sequence_names(seq_frames_dict):
         seq_name_frames = []
 
         # Group by continuous int
-        for sub_iterator, lambda_results in groupby(enumerate(seq_frames_dict[seq_name]), lambda (i, x): i-x):
+        for sub_iterator, lambda_results in groupby(
+                enumerate(seq_frames_dict[seq_name]), lambda (i, x): i-x):
             # string type all frames groups
             frame_range = map(
                 lambda x: str(x),
@@ -134,13 +138,14 @@ def format_animated_frames_by_sequence_names(seq_frames_dict):
 
 def main(job_folder_path, reg_exp):
     """
-    Format, group and print frame ranges lists for each sequence name 
+    Format, group and print frame ranges lists for each sequence name
     given a folder_path and a regex expression.
 
     Parameters
     ----------
         folder_path (string): Folder path that is gonna be scanned
-        reg_exp (string): Regex expression that should be used to evaluate  matching files
+        reg_exp (string):
+            Regex expression that should be used to evaluate  matching files
 
     Returns
     -------
