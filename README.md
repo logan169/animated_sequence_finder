@@ -12,7 +12,7 @@ The format for an animated sequence is name.####.ext e.g. /job/.../my_render_v00
 
 `python find_animated_sequences_frame_range.py -h`
 
-![GitHub Logo](/static/python_frame_range_tool1.png)
+![example_picture1](/static/python_frame_range_tool1.png)
 
 ### Running it
 
@@ -24,4 +24,4 @@ The format for an animated sequence is name.####.ext e.g. /job/.../my_render_v00
 
 `python find_animated_sequences_frame_range.py --folder_path synthetic_data/`
 
-![GitHub Logo](/static/python_frame_range2.png)
+![example_picture2](/static/python_frame_range2.png)
